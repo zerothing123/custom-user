@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+</head>
+<body>
+<h1>Log in to your account</h1>
+
+    {%if form.errors%}
+    <h1>something is wrong</h1>
+    {%endif%}
+    {%if next%}
+    <h1>not allowed</h1>
+    {%endif%}
+<form action="{%url 'login'%}" method="post">{%csrf_token%}
+    <p> UserEmail:{{form.email}}</p>
+    <p>Username:{{form.username}}</p>
+    <p>Password:{{form.password}}</p>
+<input type="submit" value="Log In">
+</form>
+</body>
+</html>
